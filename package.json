@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "Workspace root for fnqueryable",
   "scripts": {
-    "build": "pnpm --filter fnqueryable build",
+    "build": "pnpm -r build",
     "test": "pnpm --filter fnqueryable-tests test",
     "typecheck": "pnpm -r typecheck"
   },

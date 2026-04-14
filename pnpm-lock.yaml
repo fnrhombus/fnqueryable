@@ -28,8 +28,56 @@ importers:
         specifier: ^5.6.0
         version: 5.9.3
 
+  packages/graphql:
+    dependencies:
+      fnqueryable:
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(postcss@8.5.9)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+
+  packages/odata:
+    dependencies:
+      fnqueryable:
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(postcss@8.5.9)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+
+  packages/sql:
+    dependencies:
+      fnqueryable:
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      tsup:
+        specifier: ^8.3.0
+        version: 8.5.1(postcss@8.5.9)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.6.0
+        version: 5.9.3
+
   packages/tests:
     devDependencies:
+      '@fnqueryable/graphql':
+        specifier: workspace:*
+        version: link:../graphql
+      '@fnqueryable/odata':
+        specifier: workspace:*
+        version: link:../odata
+      '@fnqueryable/sql':
+        specifier: workspace:*
+        version: link:../sql
       fnqueryable:
         specifier: workspace:*
         version: link:../core

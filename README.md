@@ -97,12 +97,38 @@ Execute the query and return results.
 
 Get the parsed operations without executing. This is the hook for building custom providers.
 
+## Query Providers
+
+The expression trees parsed by fnqueryable can be translated to real query languages:
+
+### SQL
+
+```ts
+import { toSql } from "@fnqueryable/sql";
+const { sql, params } = toSql("users", query.toExpressionTree());
+// "SELECT name, email FROM users WHERE age > $1 ORDER BY name ASC LIMIT $2"
+```
+
+### OData v4
+
+```ts
+import { toOData } from "@fnqueryable/odata";
+const qs = toOData(query.toExpressionTree());
+// "$filter=age gt 25&$orderby=name asc&$select=name,email&$top=10"
+```
+
+### GraphQL
+
+```ts
+import { toGraphQL } from "@fnqueryable/graphql";
+const { query, variables } = toGraphQL("users", ops);
+```
+
+Install only the providers you need — they're separate packages.
+
 ## Roadmap
 
-- **v0.1** (current): Core parser + in-memory provider
-- SQL provider (`fnqueryable-sql`)
-- OData provider (`fnqueryable-odata`)
-- GraphQL provider (`fnqueryable-graphql`)
+- **v0.1** (current): Core parser + in-memory provider + SQL/OData/GraphQL providers
 - Custom provider API
 
 ## Install

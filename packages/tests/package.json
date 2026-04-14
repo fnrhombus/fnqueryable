@@ -9,6 +9,9 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@fnqueryable/graphql": "workspace:*",
+    "@fnqueryable/odata": "workspace:*",
+    "@fnqueryable/sql": "workspace:*",
     "vitest": "^3.2.0",
     "fnqueryable": "workspace:*",
     "typescript": "^5.6.0"
